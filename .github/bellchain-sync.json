@@ -2,6 +2,7 @@
   "note": "Written by the Bellchain sync; do not edit.",
   "version": "2026.10.22.18",
   "files": {
+    ".gitattributes": "8dc2a6ab2d74a1ac72bc19927b7a8ffe271fa70fcc2af643d9e25683622e8850",
     ".github/ISSUE_TEMPLATE/config.yml": "28e8f0ac64b0bc36ee4866e063736893b4fa8ad5394bfe5b1f14202b55ea0e01",
     ".github/ISSUE_TEMPLATE/node-idea.yml": "570931c9f8ec75dbecaea6bd0e476992838a38ae9af653e5949627728e945901",
     ".github/ISSUE_TEMPLATE/node-problem.yml": "aeb1dbf82ba10918a07132df66d2a5efbe73b40998ee7cbd92c8e73cab088264",
