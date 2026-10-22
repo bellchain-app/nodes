@@ -1,0 +1,90 @@
+{
+  "format": 1,
+  "id": "custom.gruene-serie",
+  "version": "1.0.0",
+  "label": {
+    "de": "Grüne Serie",
+    "en": "Green streak"
+  },
+  "description": {
+    "de": "Mehrere grüne Kerzen in Folge",
+    "en": "Several green candles in a row"
+  },
+  "icon": "repeat",
+  "sentence": {
+    "de": "{length} Kerzen in Folge",
+    "en": "{length} candles in a row"
+  },
+  "inputs": [
+    {
+      "id": "open",
+      "type": "price",
+      "label": {
+        "de": "Eröffnung",
+        "en": "Open"
+      }
+    },
+    {
+      "id": "close",
+      "type": "price",
+      "label": {
+        "de": "Schluss",
+        "en": "Close"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "id": "length",
+      "label": {
+        "de": "Kerzen",
+        "en": "Candles"
+      },
+      "default": 3,
+      "min": 2,
+      "max": 20,
+      "integer": true
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out",
+      "type": "signal",
+      "label": {
+        "de": "Serie",
+        "en": "Streak"
+      },
+      "formula": "holds(close > open, length)"
+    }
+  ],
+  "tests": [
+    {
+      "name": "3 candles",
+      "expectAt": {
+        "16": {
+          "out": false
+        },
+        "17": {
+          "out": true
+        }
+      },
+      "expectLast": {
+        "out": false
+      }
+    },
+    {
+      "name": "5 candles",
+      "settings": {
+        "length": 5
+      },
+      "expectAt": {
+        "18": {
+          "out": false
+        },
+        "19": {
+          "out": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "format": 1,
+  "id": "custom.abstand-zum-ema",
+  "version": "1.0.0",
+  "label": {
+    "de": "Abstand zum EMA",
+    "en": "Distance to EMA"
+  },
+  "description": {
+    "de": "Abstand des Kurses zum EMA in %",
+    "en": "Distance of the price to the EMA in %"
+  },
+  "help": {
+    "de": "Rechnet aus, wie viel Prozent der Kurs über (positiv) oder unter (negativ) seinem exponentiellen Durchschnitt liegt. Beispiel: Mit 50 Kerzen und „unter -8“ meldet sich ein Alarm, wenn der Kurs ungewöhnlich weit unter den Trend gefallen ist.",
+    "en": "Calculates how many percent the price is above (positive) or below (negative) its exponential average. Example: with 50 candles and “below -8” an alert fires when the price has fallen unusually far below the trend."
+  },
+  "icon": "ruler",
+  "sentence": {
+    "de": "EMA {length}",
+    "en": "EMA {length}"
+  },
+  "inputs": [
+    {
+      "id": "price",
+      "type": "price",
+      "label": {
+        "de": "Kurs",
+        "en": "Price"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "id": "length",
+      "label": {
+        "de": "Kerzen",
+        "en": "Candles"
+      },
+      "help": {
+        "de": "Über wie viele Kerzen der EMA rechnet, etwa 50 oder 200.",
+        "en": "How many candles the EMA covers, such as 50 or 200."
+      },
+      "default": 50,
+      "min": 2,
+      "max": 500,
+      "integer": true
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out",
+      "type": "number",
+      "unit": "percent",
+      "label": {
+        "de": "Abstand",
+        "en": "Distance"
+      },
+      "formula": "(price - ema(price, length)) / ema(price, length) * 100"
+    }
+  ],
+  "tests": [
+    {
+      "name": "EMA 50",
+      "expectAt": {
+        "48": {
+          "out": null
+        },
+        "49": {
+          "out": -1.2930260793
+        },
+        "250": {
+          "out": 0.9740385803
+        }
+      },
+      "expectLast": {
+        "out": -0.4179154069
+      }
+    },
+    {
+      "name": "EMA 200",
+      "settings": {
+        "length": 200
+      },
+      "expectAt": {
+        "300": {
+          "out": -4.0411064876
+        }
+      },
+      "expectLast": {
+        "out": -1.3175289498
+      }
+    }
+  ]
+}

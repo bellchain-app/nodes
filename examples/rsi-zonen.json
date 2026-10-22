@@ -1,0 +1,139 @@
+{
+  "format": 1,
+  "id": "custom.rsi-zonen",
+  "version": "1.0.0",
+  "label": {
+    "de": "RSI-Zonen",
+    "en": "RSI zones"
+  },
+  "description": {
+    "de": "Überverkauft und überkauft als Signal",
+    "en": "Oversold and overbought as signals"
+  },
+  "icon": "gauge",
+  "sentence": {
+    "de": "unter {low}, über {high}",
+    "en": "below {low}, above {high}"
+  },
+  "inputs": [
+    {
+      "id": "price",
+      "type": "price",
+      "label": {
+        "de": "Kurs",
+        "en": "Price"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "id": "length",
+      "label": {
+        "de": "Kerzen",
+        "en": "Candles"
+      },
+      "default": 14,
+      "min": 2,
+      "max": 100,
+      "integer": true
+    },
+    {
+      "id": "low",
+      "label": {
+        "de": "Unten",
+        "en": "Low"
+      },
+      "default": 30,
+      "min": 0,
+      "max": 100
+    },
+    {
+      "id": "high",
+      "label": {
+        "de": "Oben",
+        "en": "High"
+      },
+      "default": 70,
+      "min": 0,
+      "max": 100
+    }
+  ],
+  "outputs": [
+    {
+      "id": "value",
+      "type": "number",
+      "label": {
+        "de": "RSI",
+        "en": "RSI"
+      },
+      "formula": "rsi(price, length)"
+    },
+    {
+      "id": "oversold",
+      "type": "signal",
+      "label": {
+        "de": "überverkauft",
+        "en": "oversold"
+      },
+      "formula": "value < low"
+    },
+    {
+      "id": "overbought",
+      "type": "signal",
+      "label": {
+        "de": "überkauft",
+        "en": "overbought"
+      },
+      "formula": "value > high"
+    }
+  ],
+  "tests": [
+    {
+      "name": "RSI 14, 30/70",
+      "expectAt": {
+        "13": {
+          "value": null,
+          "oversold": false,
+          "overbought": false
+        },
+        "14": {
+          "value": 50.8045862837,
+          "oversold": false,
+          "overbought": false
+        },
+        "29": {
+          "value": 72.5888193907,
+          "oversold": false,
+          "overbought": true
+        },
+        "51": {
+          "value": 28.7846653502,
+          "oversold": true,
+          "overbought": false
+        }
+      },
+      "expectLast": {
+        "value": 46.0677651404,
+        "oversold": false,
+        "overbought": false
+      }
+    },
+    {
+      "name": "RSI 14, 40/60",
+      "settings": {
+        "low": 40,
+        "high": 60
+      },
+      "expectAt": {
+        "18": {
+          "oversold": false,
+          "overbought": true
+        },
+        "45": {
+          "oversold": true,
+          "overbought": false
+        }
+      }
+    }
+  ]
+}

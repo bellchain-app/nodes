@@ -1,0 +1,18 @@
+name: Problem with a node · Problem mit einem Baustein
+description: A node computes wrong values or can't be imported · Ein Baustein rechnet falsch oder lässt sich nicht importieren
+labels: [bug]
+body:
+  - type: input
+    id: node
+    attributes:
+      label: Node · Baustein
+      placeholder: e.g. examples/rsi-zonen.json
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened? · Was ist passiert?
+      description: Settings, pair, timeframe, the value you got and the value you expected · Einstellungen, Paar, Zeiteinheit, der Wert, den du bekommen hast, und der, den du erwartet hast
+    validations:
+      required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Docs · Doku
+    url: https://docs.bellchain.app/en/editor/custom-nodes/
+    about: Custom nodes, formulas and all functions · Eigene Bausteine, Formeln und alle Funktionen
+  - name: Questions about your account · Fragen zu deinem Konto
+    url: mailto:support@bellchain.app
+    about: Plans, payments, alerts that don't arrive · Pläne, Zahlungen, Alarme, die nicht ankommen

@@ -1,0 +1,94 @@
+{
+  "format": 1,
+  "id": "custom.golden-cross",
+  "version": "1.0.0",
+  "label": {
+    "de": "Golden Cross",
+    "en": "Golden cross"
+  },
+  "description": {
+    "de": "Schneller EMA kreuzt langsamen nach oben",
+    "en": "Fast EMA crosses above the slow one"
+  },
+  "icon": "trending-up",
+  "sentence": {
+    "de": "EMA {fast} über {slow}",
+    "en": "EMA {fast} over {slow}"
+  },
+  "inputs": [
+    {
+      "id": "price",
+      "type": "price",
+      "label": {
+        "de": "Kurs",
+        "en": "Price"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "id": "fast",
+      "label": {
+        "de": "Schnell",
+        "en": "Fast"
+      },
+      "default": 50,
+      "min": 2,
+      "max": 500,
+      "integer": true
+    },
+    {
+      "id": "slow",
+      "label": {
+        "de": "Langsam",
+        "en": "Slow"
+      },
+      "default": 200,
+      "min": 2,
+      "max": 500,
+      "integer": true
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out",
+      "type": "signal",
+      "label": {
+        "de": "Kreuz",
+        "en": "Cross"
+      },
+      "formula": "crossover(ema(price, fast), ema(price, slow))"
+    }
+  ],
+  "tests": [
+    {
+      "name": "EMA 9/21",
+      "settings": {
+        "fast": 9,
+        "slow": 21
+      },
+      "expectAt": {
+        "74": {
+          "out": false
+        },
+        "75": {
+          "out": true
+        },
+        "103": {
+          "out": true
+        }
+      }
+    },
+    {
+      "name": "EMA 50/200",
+      "expectAt": {
+        "250": {
+          "out": false
+        }
+      },
+      "expectLast": {
+        "out": false
+      }
+    }
+  ]
+}

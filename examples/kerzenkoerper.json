@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "id": "custom.kerzenkoerper",
+  "version": "1.0.0",
+  "label": {
+    "de": "Kerzenkörper",
+    "en": "Candle body"
+  },
+  "description": {
+    "de": "Größe des Kerzenkörpers in %",
+    "en": "Size of the candle body in %"
+  },
+  "icon": "chart-candlestick",
+  "inputs": [
+    {
+      "id": "open",
+      "type": "price",
+      "label": {
+        "de": "Eröffnung",
+        "en": "Open"
+      }
+    },
+    {
+      "id": "close",
+      "type": "price",
+      "label": {
+        "de": "Schluss",
+        "en": "Close"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "id": "body",
+      "type": "number",
+      "unit": "percent",
+      "label": {
+        "de": "Körper",
+        "en": "Body"
+      },
+      "formula": "(close - open) / open * 100"
+    },
+    {
+      "id": "green",
+      "type": "signal",
+      "label": {
+        "de": "grün",
+        "en": "green"
+      },
+      "formula": "close > open"
+    }
+  ],
+  "tests": [
+    {
+      "name": "open/close",
+      "expectAt": {
+        "0": {
+          "body": 0.0440677106,
+          "green": true
+        },
+        "200": {
+          "body": -0.2127899751,
+          "green": false
+        },
+        "302": {
+          "body": 0.9455784048,
+          "green": true
+        }
+      },
+      "expectLast": {
+        "body": -0.2024182092,
+        "green": false
+      }
+    }
+  ]
+}

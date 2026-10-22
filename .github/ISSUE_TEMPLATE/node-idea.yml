@@ -1,0 +1,16 @@
+name: Idea for a node · Idee für einen Baustein
+description: An indicator or signal you'd like as a node · Ein Indikator oder Signal, den du dir als Baustein wünschst
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should it calculate? · Was soll er rechnen?
+      description: In your words, with a link to a description if there is one · In deinen Worten, mit Link zu einer Beschreibung, wenn es eine gibt
+    validations:
+      required: true
+  - type: textarea
+    id: formula
+    attributes:
+      label: Formula, if you know it · Formel, wenn du sie kennst
+      placeholder: e.g. (close - sma(close, 20)) / stdev(close, 20)

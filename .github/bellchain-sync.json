@@ -1,0 +1,31 @@
+{
+  "note": "Written by the Bellchain sync; do not edit.",
+  "version": "2026.10.22.18",
+  "files": {
+    ".github/ISSUE_TEMPLATE/config.yml": "28e8f0ac64b0bc36ee4866e063736893b4fa8ad5394bfe5b1f14202b55ea0e01",
+    ".github/ISSUE_TEMPLATE/node-idea.yml": "570931c9f8ec75dbecaea6bd0e476992838a38ae9af653e5949627728e945901",
+    ".github/ISSUE_TEMPLATE/node-problem.yml": "aeb1dbf82ba10918a07132df66d2a5efbe73b40998ee7cbd92c8e73cab088264",
+    ".github/PULL_REQUEST_TEMPLATE.md": "19e4a7ac484383a5457d24ba340fc78f33db026a06f1e135f64694294f1be3cc",
+    ".github/workflows/check.yml": "f3eba23bc19b3fdd3d6a2818aff9142cf0b0bd876829ac54639d2bcbc981e10b",
+    "community/README.md": "9add75c38f95ddccce3c640227b5881bd50959c25dc0a4e56739d9cbeaab7ba3",
+    "CONTRIBUTING.de.md": "a8d2662e23edd5da255301b3a992dac5c5ed047ffc972c0e5cea4e9658a576ae",
+    "CONTRIBUTING.md": "d3a5e1e2120f531bdf78aa9c2393a0daf7fadc9b1d7d60d5e379547404d08cc9",
+    "examples/abstand-zum-ema.json": "b349c954bd4b35205b0cdc3dbccb40c5e6185054bfaeb138391dbb146415a061",
+    "examples/golden-cross.json": "1a53910dafd4f6a2593bde5bf050407c4dfed7b8e93d23aa3bb65268152266d7",
+    "examples/gruene-serie.json": "0bdf22ffea8308d512245be37fdc3ea37f086d1f0630a6de4c11e9a114d7a253",
+    "examples/kerzenkoerper.json": "0f55a05bb09ca12ff3e43be078f908af3c9967593b492fbed52d525916c8954a",
+    "examples/rsi-zonen.json": "7f4d9e4d040c4a0c9ac1e1d1579826a086473710ea187aead58ade5ecde6bbcd",
+    "examples/volumen-spitze.json": "c0f1780c31900da6e8fb1e194dadbafd59a4d5fff2db2c6275ce6027a122cb15",
+    "fixtures/btcusdt-1h-500.json": "790458882465ed903f1a5e73968ada936ca591243449237170f3ebd1f7350991",
+    "images/de/custom-node-json.webp": "673c5d73d491e2351879acc961d56843af29c8f2df5cdddb6c533a42f21e691f",
+    "images/de/custom-node-start.webp": "fe09b187458b37d255dc5fdf6b71fdb820be732aea3acf0471e8242865b23cd4",
+    "images/de/custom-node.webp": "7f7664a892b96ff17e2886ccfe24e2cad3b29d26099aa4873960e6ad5bf2e0ca",
+    "images/en/custom-node-json.webp": "bce7fbb4611ddf46bd1d4150cfacdb3b49a33e3ee9f2753fc578582f622179e8",
+    "images/en/custom-node-start.webp": "d7c647798401e08b68550e0a728d8635782466f7a9bd8ef993ee9d11b49b3430",
+    "images/en/custom-node.webp": "c658b5e27f89a491748cad373a288c3be3d9eadb1131819371d4757c2f19cde7",
+    "LICENSE": "67e7ebe97ed5d5ca469350c58527dc60be14e97664f12d684f9169a618a675a7",
+    "README.de.md": "cb2ff57797010ca6b7049c0e1765b69f65528dee22e61205d5444a057b1bb53f",
+    "README.md": "eb1817982de63a4988334f0f4b4752674cecf3b42f150fcc639ad3d599885055",
+    "scripts/check.mjs": "3d95cf0d3f4dbd6fa03643d66b4f65e6c3ac03c1815fe2034f693f645762cc43"
+  }
+}
